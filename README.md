@@ -15,3 +15,17 @@ Compress bash file is credited to [alfredklomp](http://www.alfredklomp.com/progr
 This uses ```pdfunite``` which is part of ```poppler``` and is probably already installed in your Linux.
 
 Just use: ```pdfunite in-1.pdf in-2.pdf in-n.pdf out.pdf```
+
+# Splitting pdfs
+
+```pdfseparate -f 1 -l 5 input.pdf output-page-%d.pdf```
+
+Where ```-f``` is the first page to split and ```-l``` is the last one. If you want just one, make both the same. Also, ```%d``` is important.
+
+# Rotating pdfs permanently
+
+Use ```pdfjam``` where the commands to rotate and the final is a landscape are:
+
+```pdfjam --landscape --angle 90 input.pdf```
+
+If you want the final to be a portrait, just remove the ```--landscape``` command: ```pdfjam --angle 90 input.pdf```
