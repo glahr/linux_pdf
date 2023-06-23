@@ -16,6 +16,8 @@ This uses ```pdfunite``` which is part of ```poppler``` and is probably already 
 
 Just use: ```pdfunite in-1.pdf in-2.pdf in-n.pdf out.pdf```
 
+To select all the files in one folder in numerical/alphabetical order, use: ```pdfunite $(ls *.pdf | sort -n) output.pdf```. Make sure you don't have white spaces in the file name.
+
 # Splitting pdfs
 
 ```pdfseparate -f 1 -l 5 input.pdf output-page-%d.pdf```
